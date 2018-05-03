@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>let and const</title>
+</head>
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+    <script>
+        /**
+         *  let 和 const 用来声明变量和常量
+         */
+        //1 作用域只局限于当前代码块
+        {
+            var user = '大师傅';
+            //console.log(user);
+            let name1 = 'abc';
+            //console.log(name1);
+        }
+        //console.log(user);
+        //console.log("---------"+name1);
+        //2 使用let申明的变量作用域不会被提升
+        {
+            //console.log(str1);//undefined
+            var str1 = '执行';
+
+            //console.log(str2);
+            let str2;
+
+        }
+        //3 在相同的作用域下不能申明相同的变量
+        {
+            var stra = '张三';
+            var stra = '李四';
+            //console.log(stra);//李四
+
+            let strb = 'sdf';
+            //let strb = '123a';
+            //console.log(strb);//编译出错
+        }
+        //4 for循环体现let的父子作用域
+        var btns = document.querySelectorAll('button');
+        //需要将var 改为let
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].onclick = function (){
+                alert('点击了第'+i+'个按钮');
+            }
+        }
+       /* for (var i = 0; i < btns.length; i++) {
+            (function(i){
+                btns[i].onclick = function (){
+                    alert('点击了第'+i+'个按钮');
+                }
+            })(i)
+        }*/
+    </script>
+
+</body>
+</html>
