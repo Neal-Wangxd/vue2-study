@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Const</title>
+</head>
+<body>
+    <script>
+        //1 只在当前的代码块中有效
+        //2 作用域不会被提升
+        //3 不能重复申明
+        {
+            const  a = 'asf';
+            console.log(a);
+        }
+        //console.log(a);//not defined
+        //4 申明的常量必须赋值，并且不能再修改值
+        {
+            let uname;
+            //const uname;//编译错误
+            uname = 'asdf';
+            //console.log(uname)
+        }
+        //对象类的可以修改其中属性的值
+        const obj = {name:'abc'};
+        console.log(obj);
+        obj.name = '大师傅';
+        console.log(obj)
+    </script>
+</body>
+</html>
