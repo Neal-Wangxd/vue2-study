@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>解构赋值</title>
+    <!--
+        ES6允许按照一定模式从数组和对象中提取值，
+        对变量进行赋值，称为解构
+    -->
+</head>
+<body>
+    <script>
+        //1. 基本用法
+        //let name = '张三' ,age = 23, sex = '男';
+        //let [name,age,sex] = ['李四',34,'女'];
+        //name = '王老师'
+        //console.log(name);
+        //console.log(age);
+        //console.log(sex);
+        //2.对象的解构赋值
+        /*
+        let {name,age,sex} = {name:'张三',age:33,sex:'男'};
+        console.log(name);
+        console.log(age);
+        console.log(sex);
+        */
+
+        /*let {name,age,friends,pet} = {name:'张三',age:33,friends:['abc','我是神仙'],pet:{name:'大唐',age:3}};
+        console.log(name);
+        console.log(age);
+        console.log(friends);
+        console.log(pet);*/
+        //3. 数组的解构赋值
+        //let [name,age,sex] = ['李四',34,'女'];
+        //let [arr1,[arr2,arr3,[arr4,arr5]]] = [1,[2,3,[4,5]]];
+        //console.log(arr1,arr2,arr3,arr4,arr5)
+        //let [arr1] = [];
+        //console.log(arr1);//undefined
+        //let[a,,c,d] = [1,2,3];
+        //console.log(a,c);//1,3
+
+        //4.基本类型的解构赋值
+        let [a,b,c,d,e] = '我是中国人';//不支持数字类型
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log(d);
+        console.log(e);
+    </script>
+</body>
+</html>
