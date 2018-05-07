@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内置对象扩展</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+    </ul>
+    <script>
+        //1数组的扩展Array.from()
+        //let allList = document.querySelectorAll('li');
+        //console.log(allList);
+        //console.log(Array.isArray(allList));
+        //console.log(Array.from(allList));
+
+        //Array.of()
+        //console.log(Array.of(1,2,3,4));
+
+
+        //2.对象的扩展
+        //key 和 value 若是一样的，写一个就行
+        let name = '张三';
+        let age = 43;
+        let obj = {
+            name,
+            age
+        }
+        //console.log(obj);
+
+        //Object.assign();
+        let obj1 = {name:'张三'};
+        let obj2 = {age:34};
+        let obj3 = {sex:'男'};
+        let obj4 = {friends:'李四'};
+        let obj5 = {};
+        Object.assign(obj5,obj1,obj2,obj3,obj4);
+        console.log(obj5);
+
+
+        //延展操作符
+        let str = '今天天气很好！';
+        let strArr = [...str];
+        console.log(strArr);
+
+
+    </script>
+</body>
+</html>
