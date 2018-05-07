@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据集合SET</title>
+</head>
+<body>
+    <script>
+        //1. 创建一个集合
+        let set = new Set(['张三','李四','张三']);
+        console.log(set);
+        //size属性
+        //console.log(set.size);
+
+        //add 方法
+        set.add('文档').add('二等分');
+        //console.log(set);
+
+        //delete 方法
+        set.delete('文档');
+        console.log(set);
+
+        //has 方法
+        console.log(set.has('李四'));
+
+        //clear 方法
+        //set.clear();
+        //console.log(set);
+
+        //keys  and values
+        console.log(set.keys());
+        console.log(set.values());
+    </script>
+</body>
+</html>
