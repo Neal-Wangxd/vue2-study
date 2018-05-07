@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Symbol</title>
+</head>
+<body>
+    <script>
+        //ES6引入新的原始数据类型Symbol 表示独一无二的值
+        //1 定义
+        let str1 = Symbol();
+        let str2 = Symbol();
+
+        console.log(str1 === str2);
+        console.log(typeof str1);
+
+        //描述
+
+        let str3 = Symbol('name');
+        let str4 = Symbol('name');
+        //console.log(str3);
+        //console.log(str3 === str4);
+
+        //对象属性名
+        const  obj = {};
+        obj[Symbol('name')] = '张三';
+        obj[Symbol('name')] = '张三';
+        console.log(obj);
+    </script>
+</body>
+</html>
