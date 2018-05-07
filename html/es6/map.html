@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据集合MAP</title>
+</head>
+<body>
+    <script>
+        //1 创建一个map
+        const map = new Map([
+            ['name','张三'],
+            ['age',23],
+            ['sex','男'],
+            [{a:1},'总额为地方'],
+            [{b:2},'二手房挺好']
+        ]);
+        //console.log(map);
+        //size 属性
+        //console.log(map.size);
+
+        //set 和 get
+        //map.set('friends',['按错','打客服']);
+        //console.log(map);
+        //console.log(map.get('name'));
+
+        //delete
+        //map.delete('name');
+        //console.log(map);
+
+
+        //has
+        //console.log(map.has('name'));
+
+        //clear
+        //map.clear();
+        //console.log(map);
+
+
+        // keys() values()  entries()
+        //console.log(map.keys());
+        //console.log(map.values());
+        //console.log(map.entries());
+
+
+        //遍历
+        map.forEach(function(value,index){
+            console.log(value+"-----"+index);
+        })
+
+
+        //注意事项
+        map.set({},'123');
+        map.set({},'321');
+        console.log(map);
+    </script>
+</body>
+</html>
