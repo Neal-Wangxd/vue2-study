@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>v-if demo</title>
+    <title>v-show demo</title>
 </head>
 <body>
     <div id="app">
-        <p v-if="show">show</p>
-        <p v-if="hidden">hidden</p>
-        <p v-if="height > 1.85">身高{{height}}m</p>
+        <p v-show="show">show</p>
+        <p v-show="hidden">hidden</p>
+        <p v-show="height > 1.65">身高{{height}}m</p>
     </div>
-    <script src="../../js/vue.js"></script>
+    <script src="../../../js/vue.js"></script>
     <script>
         new Vue({
             el:'#app',

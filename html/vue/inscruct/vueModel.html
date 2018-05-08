@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello Vue</title>
-    <script src="../../js/vue.js"></script>
+    <title>Vue Model</title>
+    <script src="../../../js/vue.js"></script>
 </head>
 <body>
     <div id="app">
         <p>{{message}}</p>
-        <p>{{msg}}</p>
+        <input type="text" v-model="message">
     </div>
     <script>
         //1.创建Vue实例
@@ -16,7 +16,6 @@
             el:'#app',
             data:{
                 message:'Hello World!',
-                msg:'你好，世界！'
             }
         });
 
