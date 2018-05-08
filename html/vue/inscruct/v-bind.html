@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind 指令 demo</title>
+    <script src="../../../js/vue.js"></script>
+    <style>
+        img{
+            width: 600px;
+            height: 400px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -200px;
+            margin-left: -300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <img v-bind:src="imgSrc1" :alt="alt1">
+        <img :src="imgSrc2" :alt="alt2">
+    </div>
+    <script>
+        //1.创建Vue实例
+        let vm = new Vue({
+            el:'#app',
+            data:{
+                imgSrc1:'../../images/4k_13.jpg',
+                imgSrc2:'../../images/4k_21.jpg',
+                alt1:'花朵',
+                alt2:'星空'
+            }
+        });
+
+    </script>
+</body>
+</html>
