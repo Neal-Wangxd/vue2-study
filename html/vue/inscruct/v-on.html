@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-on 指令测试</title>
+</head>
+<body>
+    <div id="app">
+        <p :style="{color:fontColor}">{{msg}}</p>
+        <button v-on:click="msg='Hello Vue v-on'">Update</button>
+        <button @click="changeContent()">Update</button>
+        <button @click="changeColor()">Color</button>
+
+    </div>
+    <script src="../../../js/vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                msg:'Hello World!',
+                fontColor:'green'
+            },
+            methods:{ //实例的所有函数实现
+                changeContent:function(){
+                    this.msg = 'Hello Vue Click';
+                },
+                changeColor:function(){
+                    this.fontColor = 'red';
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>
