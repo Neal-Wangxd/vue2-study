@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for-demo demo</title>
+    <style>
+        table{
+            width: 600px;
+            height: 400px;
+            border: 2px solid orangered;
+            text-align: center;
+        }
+        thead{
+            background-color: orangered;
+        }
+        tr:hover{
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <table>
+            <thead>
+                <tr>
+                    <td>姓名</td>
+                    <td>年龄</td>
+                    <td>薪资</td>
+                    <td>职位</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="person in personList">
+                    <td>{{person.name}}</td>
+                    <td>{{person.age}}</td>
+                    <td>{{person.salary}}</td>
+                    <td>{{person.job}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+    <script src="../../js/vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                personList:[
+                    {name:'张三',age:34,salary:15800,job:'oracle'},
+                    {name:'李四',age:28,salary:17000,job:'java'},
+                    {name:'王五',age:30,salary:16800,job:'javascript'},
+                    {name:'狗蛋',age:32,salary:16500,job:'mysql'},
+                    {name:'二狗子',age:29,salary:17800,job:'c++'}
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
