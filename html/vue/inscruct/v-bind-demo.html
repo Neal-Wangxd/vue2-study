@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind 指令 demo</title>
+    <script src="../../../js/vue.js"></script>
+    <style>
+        .active{
+            background-color: orangered;
+            font-size: 20px;
+            color: azure;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+       <p v-for="(technology,index) in technologies"
+          :class="index === active ? 'active' :'' "
+          @mouseOver="mouseOver(index)">
+           {{technology}}
+       </p>
+        <p :style="{color: fontColor}">Hello World</p>
+    </div>
+    <script>
+        //1.创建Vue实例
+        let vm = new Vue({
+            el:'#app',
+            data:{
+                technologies:['Java','Android','JavaScript','Python','IOS','C++'],
+                active:0,
+                fontColor:'green'
+            },
+            methods:{
+                mouseOver:function(index){
+                    this.active = index;
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
