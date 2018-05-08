@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-show demo</title>
+</head>
+<body>
+    <div id="app">
+        <p v-show="show">show</p>
+        <p v-show="hidden">hidden</p>
+        <p v-show="height > 1.65">身高{{height}}m</p>
+    </div>
+    <script src="../../js/vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                show:true,
+                hidden:false,
+
+                height:1.75
+            }
+        })
+    </script>
+</body>
+</html>
