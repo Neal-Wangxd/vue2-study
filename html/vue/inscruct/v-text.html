@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-text& v-html 指令</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}123</p>
+        <p v-text="msg">asdf</p>//不会显示asdf
+        <div v-html="html">
+            <!--以下不会显示出来-->
+            asdf
+            <input type="text">
+        </div>
+    </div>
+    <script src="../../../js/vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                msg:'Hello World!',
+                html:'<input type="date"><input type="color">'
+            }
+        })
+    </script>
+</body>
+</html>
