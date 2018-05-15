@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义事件测试</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <test-btn @total="totalCounts()"></test-btn>
+        <test-btn @total="totalCounts()"></test-btn>
+        <test-btn @total="totalCounts()"></test-btn>
+        <test-btn @total="totalCounts()"></test-btn>
+
+        <p>一共点击了<span style="color: green;font-weight: bold">{{totalCount}}</span>次</p>
+    </div>
+
+    <template id="testBtn">
+        <button @click="total()">点击了<span style="color: red;font-weight: bold">{{counter}}</span>次</button>
+    </template>
+
+    <script src="../../../js/vue.js"></script>
+    <script>
+        Vue.component('test-btn',{
+            template:'#testBtn',
+            data(){
+                return {
+                    counter:0
+                }
+            },
+            methods:{
+                total(){
+                    this.counter += 1;
+
+                    //通知外界，调用了该方法
+                    this.$emit('total');
+                }
+            }
+        });
+        new Vue({
+            el:'#app',
+            data:{
+                msg:'Hello Event!',
+                totalCount:0
+            },
+            methods:{
+                totalCounts(){
+                    this.totalCount += 1
+                }
+            }
+
+        })
+    </script>
+
+</body>
+</html>
