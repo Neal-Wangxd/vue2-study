@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全局组件测试</title>
+</head>
+<body>
+    <div id="app">
+        <test-date></test-date>
+    </div>
+    <div id="app1">
+        <test-date></test-date>
+    </div>
+    <script src="../../../js/vue.js"></script>
+    <script>
+        //1.创建组件机构
+        let Profile = Vue.extend({
+            //1.1 模板选项
+            /*template:'<div>' +
+                     '<input type="date">' +
+                     '<p>Hello Vue</p>' +
+                     '</div>'*/
+            template:`
+                        <div>
+                            <input type="date">
+                        </div>
+                     `
+        });
+        //2.注册全局组件
+        Vue.component("test-date",Profile);
+        new Vue({
+            el:'#app',
+            data:{
+                msg:'Hello World!'
+            }
+        });
+
+        new Vue({
+            el:'#app1',
+            data:{
+                msg:'Hello World!'
+            }
+        });
+    </script>
+
+</body>
+</html>
