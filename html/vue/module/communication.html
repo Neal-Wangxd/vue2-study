@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件通信测试</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <test-communication message="This is a flower" imgurl="../../../images/4k_13.jpg"></test-communication>
+        <test-communication message="There are some stars" imgurl="../../../images/4k_21.jpg"></test-communication>
+
+    </div>
+
+    <template id="myTemplate">
+        <div>
+            <h3>{{message}}</h3>
+            <img :src="imgurl" alt="flower" width="400" height="300">
+        </div>
+    </template>
+
+
+    <script src="../../../js/vue.js"></script>
+    <script>
+
+        //1.实例化组件
+        Vue.component('test-communication',{
+            template:'#myTemplate',
+            props:['message','imgurl']
+        });
+
+
+        new Vue({
+            el:'#app',
+            data:{
+                msg:'Hello World!'
+            }
+        })
+    </script>
+
+</body>
+</html>
