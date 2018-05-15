@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简写形式的组件</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <test-date></test-date>
+    </div>
+    <div id="app1">
+        <p>{{msg}}</p>
+        <test-color></test-color>
+    </div>
+    <script src="../../../js/vue.js"></script>
+    <script>
+
+        Vue.component("test-date",{
+            template:`
+                        <div>
+                            <input type="date">
+                        </div>
+                     `
+        });
+
+        new Vue({
+            el:'#app',
+            data:{
+                msg:'Hello World!'
+            }
+        });
+
+        new Vue({
+            el:'#app1',
+            data:{
+                msg:'Hello Vue!'
+            },
+            components:{
+                'test-color':{
+                    template:`
+                        <div>
+                            <input type="color">
+                        </div>
+                     `
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>
