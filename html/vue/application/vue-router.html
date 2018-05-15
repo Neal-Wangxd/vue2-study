@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-router 路由器</title>
+    <link rel="stylesheet" href="../../../bootstrap/css/bootstrap.css">
+    <script src="../../../js/vue.js"></script>
+    <script src="../../../js/vue-router.js"></script>
+    <style>
+        body{
+            background-color: #e8e8e8;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="row">
+            <div class="col-xl-8 offset-2">
+                <div class="page-header">
+                    <h1>Neal-Tony IT School</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-2 offset-2">
+                <router-link class="list-group-item" to="/html5">HTML5 School</router-link>
+                <router-link class="list-group-item" to="/java">Java School</router-link>
+                <router-link class="list-group-item" to="/python">Python School</router-link>
+                <router-link class="list-group-item" to="/vue">VUE School</router-link>
+            </div>
+            <div class="col-xl-6">
+                <div class="card">
+                    <div class="card-body">
+                        <!--路由出口-->
+                        <router-view></router-view>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <template id="testHtml5">
+        <div>
+            <h2>HTML5 School</h2>
+            <p>掌握面向未来的神技！</p>
+            <img src="../../../images/html5.jpg">
+        </div>
+    </template>
+
+    <template id="testJava">
+        <div>
+            <h2>Java School</h2>
+            <p>一种面向对象的编程语言！</p>
+            <img src="../../../images/java.jpg">
+        </div>
+    </template>
+
+    <template id="testPython">
+        <div>
+            <h2>Python School</h2>
+            <p>一种应用非常广泛的脚本语言！</p>
+            <img src="../../../images/python.jpg">
+        </div>
+    </template>
+
+    <template id="testVue">
+        <div>
+            <h2>VUE School</h2>
+            <p>一款轻量级的前端框架！</p>
+            <img src="../../../images/vue.jpg">
+        </div>
+    </template>
+
+
+    <script>
+        //1.创建组件
+        const  testHtml5 = Vue.extend({
+            template:'#testHtml5'
+        });
+        const  testJava = Vue.extend({
+            template:'#testJava'
+        });
+        const  testPython = Vue.extend({
+            template:'#testPython'
+        });
+        const  testVue = Vue.extend({
+            template:'#testVue'
+        });
+
+        //2.定义路由
+        const routes = [
+            {path:'/html5',component:testHtml5},
+            {path:'/java',component:testJava},
+            {path:'/python',component:testPython},
+            {path:'/vue',component:testVue},
+            //配置根路由
+            {path:'/',redirect:'/html5'}
+        ]
+
+        //3.创建路由实例
+        const router = new VueRouter({
+            routes
+        });
+
+        //4.创建Vue实例，并挂载
+        new Vue({
+            router
+        }).$mount('#app')
+
+    </script>
+
+</body>
+</html>
