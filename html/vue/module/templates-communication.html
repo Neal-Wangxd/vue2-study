@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多层组件通信</title>
+</head>
+<body>
+    <div id="app">
+        <test-dczjtx :imgtitlep="titlei" :imgsrcp="imgsrci"></test-dczjtx>
+    </div>
+
+    <template id="myTemplateImg">
+        <img :src="imgurls" alt="flower" width="400" height="300">
+    </template>
+
+    <template id="myTemplateTitle">
+        <h3>{{titles}}</h3>
+    </template>
+
+    <template id="myTemplateParent">
+        <div>
+            <test-title :titles="imgtitlep"></test-title>
+            <test-img :imgurls="imgsrcp"></test-img>
+        </div>
+    </template>
+
+
+    <script src="../../../js/vue.js"></script>
+    <script>
+
+        //1.实例化组件
+        let templateImg = Vue.extend({
+            template:'#myTemplateImg',
+            props:["imgurls"]
+        });
+        let templateTitle = Vue.extend({
+            template:'#myTemplateTitle',
+            props:['titles']
+        });
+
+
+        //2.注册父组件
+        Vue.component('test-dczjtx',{
+            template:'#myTemplateParent',
+            props:['imgsrcp','imgtitlep'],
+            components:{
+                'test-img':templateImg,
+                'test-title':templateTitle
+            }
+        });
+
+        new Vue({
+            el:'#app',
+            data:{
+                titlei:'这是一朵漂亮的花！',
+                imgsrci:'../../../images/4k_13.jpg'
+            }
+        })
+    </script>
+
+</body>
+</html>
