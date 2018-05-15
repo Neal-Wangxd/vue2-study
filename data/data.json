@@ -1,0 +1,56 @@
+{
+  "allShops":{
+    "totalMoney":0,
+    "shopList":[
+      {
+        "shopId":"1001",
+        "shopName":"捷安特 ANYROAD COMAX",
+        "shopPrice":4299.00,
+        "shopNumber":1,
+        "shopImage":"../../images/giant_anyroad_comax.jpg"
+      },
+      {
+        "shopId":"1002",
+        "shopName":"捷安特 GLORY ADVANCED",
+        "shopPrice":5299.00,
+        "shopNumber":1,
+        "shopImage":"../../images/giant_glory_advanced.jpg"
+      },
+      {
+        "shopId":"1003",
+        "shopName":"捷安特 GLORY ADVANCED SL2",
+        "shopPrice":7899.00,
+        "shopNumber":1,
+        "shopImage":"../../images/giant_propel_advanced_sl2.png"
+      },
+      {
+        "shopId":"1004",
+        "shopName":"捷安特 SCR1",
+        "shopPrice":6899.00,
+        "shopNumber":1,
+        "shopImage":"../../images/giant_scr1.png"
+      },
+      {
+        "shopId":"1005",
+        "shopName":"捷安特 XTC C2",
+        "shopPrice":7299.00,
+        "shopNumber":1,
+        "shopImage":"../../images/giant_xtc_c2.jpg"
+      },
+      {
+        "shopId":"1006",
+        "shopName":"捷安特 XTC C3",
+        "shopPrice":7699.00,
+        "shopNumber":1,
+        "shopImage":"../../images/giant_xtc_c3.jpg"
+      },
+      {
+        "shopId":"1007",
+        "shopName":"捷安特 XTC SLR4",
+        "shopPrice":8299.00,
+        "shopNumber":1,
+        "shopImage":"../../images/giant_xtc_slr4.png"
+      }
+    ]
+  }
+}
