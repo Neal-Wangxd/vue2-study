@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>data测试</title>
+</head>
+<body>
+
+    <div id="app">
+        <p>{{msg}}</p>
+        <test-template></test-template>
+    </div>
+
+    <template  id="myTemplate">
+        <div>
+            <p>Template Test</p>
+            <input type="color">
+            <p>{{message}}</p>
+        </div>
+    </template>
+    <script src="../../../js/vue.js"></script>
+    <script>
+        //1.实例化组件
+        Vue.component('test-template',{
+            template:'#myTemplate',
+            /*data:{ //必须要用函数的方式返回
+                message:'哈哈哈哈'
+            }*/
+            data(){
+                return {
+                    message:'哈哈哈哈'
+                }
+            }
+
+        })
+        new Vue({
+            el:'#app',
+            data:{
+                msg:'Hello World!'
+            }
+        })
+    </script>
+</body>
+</html>
