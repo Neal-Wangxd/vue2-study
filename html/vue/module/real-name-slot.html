@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实名插槽测试demo</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <test-computer>
+            <div slot="cpu">Inter Core i8</div>
+            <img slot="gpu" src="../../../images/4k_21.jpg" width="200" height="200" alt="star">
+            <div slot="memory">SanDisk 128G</div>
+            <div slot="hard">Seagate 128G SSD</div>
+        </test-computer>
+    </div>
+
+    <template id="testComputer">
+        <div id="main">
+            <slot name="cpu">CPU</slot>
+            <slot name="gpu">GPU</slot>
+            <slot name="memory">内存条</slot>
+            <slot name="hard">硬盘</slot>
+        </div>
+    </template>
+
+    <script src="../../../js/vue.js"></script>
+    <script>
+
+        Vue.component('test-computer',{
+            template:'#testComputer',
+        });
+
+        new Vue({
+            el:'#app',
+            data:{
+                msg:'Hello World!'
+            }
+        })
+    </script>
+
+</body>
+</html>
