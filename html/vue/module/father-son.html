@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父子组件测试</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <parnet></parnet>
+
+        <test-child></test-child>
+    </div>
+    <script src="../../../js/vue.js"></script>
+    <script>
+        //1.子组件构造器
+        let childImg = Vue.extend({
+            template:`<img src="../../../images/4k_13.jpg" width="400" height="300"/>`
+        });
+        let childMsg = Vue.extend({
+            template:`<p> 这是一张图片</p>`
+        });
+
+        Vue.component('test-child',childImg)
+
+        //2.父组件构造器
+        Vue.component('parnet',{
+            components:{
+                'myImg':childImg,
+                'myMsg':childMsg
+            },
+            template:`
+                        <div>
+                            <myImg></myImg>
+                            <myMsg></myMsg>
+                        </div>
+                     `
+        });
+
+        new Vue({
+            el:'#app',
+            data:{
+                msg:'Hello World!'
+            }
+        })
+    </script>
+
+</body>
+</html>
