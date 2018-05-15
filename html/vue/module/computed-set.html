@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性的set测试</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{fullName}}</p>
+        <button @click="computedSet()">ComputedSet</button>
+    </div>
+    <script src="../../../js/vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                en:'Hello World!',
+                cn:'你好 世界！'
+            },
+            methods:{
+                computedSet:function(){
+                    //相当于调用fullName的setter方法
+                    this.fullName = 'Hello Vue, 你好 Vue ';
+                }
+            },
+            //计算属性
+            computed:{
+                fullName:{
+                    //get方法
+                    get(){
+                        return this.en +','+ this.cn;
+                    },
+                    //set方法
+                    set(str){
+                        let nameArr = str.split(',');
+                        this.en = nameArr[0];
+                        this.cn = nameArr[1];
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>
