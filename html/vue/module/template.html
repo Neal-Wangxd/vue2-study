@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template标签测试</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <test-template></test-template>
+    </div>
+
+    <template id="myTemplate">
+        <div>
+            <p>Template Test</p>
+            <input type="color">
+        </div>
+    </template>
+    <script src="../../../js/vue.js"></script>
+    <script>
+        //1.实例化组件
+        Vue.component('test-template',{
+            template:'#myTemplate'
+        })
+        new Vue({
+            el:'#app',
+            data:{
+                msg:'Hello World!'
+            }
+        })
+    </script>
+</body>
+</html>
