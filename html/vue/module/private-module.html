@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>局部组件测试</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <test-date></test-date>
+        <test-color></test-color>
+    </div>
+    <script src="../../../js/vue.js"></script>
+    <script>
+
+        //1.创建组件机构
+        let testDate = Vue.extend({
+            template:`
+                        <div>
+                            <input type="date">
+                        </div>
+                     `
+        });
+        let testColor = Vue.extend({
+            template:`
+                        <div>
+                            <input type="color">
+                        </div>
+                     `
+        });
+
+        new Vue({
+            el:'#app',
+            data:{
+                msg:'Hello World!'
+            },
+            components:{
+                'test-date':testDate,
+                'test-color':testColor
+            }
+        })
+    </script>
+
+</body>
+</html>
