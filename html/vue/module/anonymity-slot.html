@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>匿名solt测试demo</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <test-slot>
+            <img src="../../../images/4k_13.jpg" width="400" height="300" alt="flower">
+            <p>这是一朵花儿！</p>
+        </test-slot>
+    </div>
+
+    <template id="testSlot">
+        <div id="panel">
+            <h2 class="panel-head">插槽的头部</h2>
+            <!--预留一个插槽-->
+            <slot>可以替换任何标签</slot>
+            <footer>插槽尾部</footer>
+        </div>
+    </template>
+
+    <script src="../../../js/vue.js"></script>
+    <script>
+
+        Vue.component('test-slot',{
+            template:'#testSlot',
+        });
+
+        new Vue({
+            el:'#app',
+            data:{
+                msg:'Hello Slot!'
+            }
+        })
+    </script>
+</body>
+</html>
